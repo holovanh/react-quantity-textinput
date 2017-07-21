@@ -1,9 +1,3 @@
-/**
- * React-Native Quantity TextInput
- * https://github.com/mdnahian/react-quantity-textinput
- * md.islam007@rutgers.edu
- */
-
 import React, { Component } from 'react';
 import {
   View,
@@ -12,7 +6,7 @@ import {
   TextInput,
   TouchableHighlight
 } from 'react-native';
-
+import Icon from 'react-native-vector-icons/Ionicons'
 
 module.exports = React.createClass({
   getInitialState: function () {
@@ -78,6 +72,9 @@ module.exports = React.createClass({
   render: function () {
     return <View style={this.state.style}>
       <View style={styles.horizontal}>
+        <TouchableHighlight underlayColor={'#fff'} onPress={this.downBtnPressed} style={[styles.button, this.state.styleButton]}>
+          <Icon name="ios-remove" size={30} color="#666" />
+        </TouchableHighlight>
         <TextInput
           style={[styles.textinput, this.state.styleTextInput]}
           editable={this.state.editable}
@@ -85,11 +82,8 @@ module.exports = React.createClass({
           value={this.state.value}
           onChangeText={(text) => this.onChangeText(text)}/>
         <View style={styles.verticle}>
-          <TouchableHighlight underlayColor={'#999999'} onPress={this.upBtnPressed} style={[styles.button, this.state.styleButton]}>
-            <Image source={require('./up.png')} style={this.state.styleImage} />
-          </TouchableHighlight>
-          <TouchableHighlight underlayColor={'#999999'} onPress={this.downBtnPressed} style={[styles.button, this.state.styleButton]}>
-            <Image source={require('./down.png')} style={this.state.styleImage} />
+          <TouchableHighlight underlayColor={'#fff'} onPress={this.upBtnPressed} style={[styles.button, this.state.styleButton]}>
+            <Icon name="ios-add" size={30} color="#666" />
           </TouchableHighlight>
         </View>
       </View>
@@ -114,7 +108,7 @@ module.exports = React.createClass({
         value: value
       });
 
-      this.props.onChangeText(value);
+      /*this.props.onChangeText(value);*/
     }
   },
   onChangeText: function (text) {
@@ -129,7 +123,7 @@ module.exports = React.createClass({
         value: "0"
       })
 
-      this.props.onChangeText("0");
+      /*this.props.onChangeText("0");*/
     }
   }
 });
@@ -153,7 +147,7 @@ var styles = StyleSheet.create({
     textAlign: 'center'
   },
   button: {
-    backgroundColor: '#dedede',
+    backgroundColor: '#fff',
     padding: 5
   },
   image: {

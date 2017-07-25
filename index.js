@@ -97,7 +97,7 @@ module.exports = React.createClass({
         value: value
       });
 
-      this.props.onChangeText(value);
+      /*this.props.onChangeText(value);*/
     }
   },
   downBtnPressed: function () {

@@ -97,7 +97,7 @@ module.exports = React.createClass({
         value: value
       });
 
-      /*this.props.onChangeText(value);*/
+      this.props.onChangeText(value);
     }
   },
   downBtnPressed: function () {
@@ -108,7 +108,7 @@ module.exports = React.createClass({
         value: value
       });
 
-      /*this.props.onChangeText(value);*/
+      this.props.onChangeText(value);
     }
   },
   onChangeText: function (text) {
@@ -123,7 +123,7 @@ module.exports = React.createClass({
         value: "0"
       })
 
-      /*this.props.onChangeText("0");*/
+      this.props.onChangeText("0");
     }
   }
 });
